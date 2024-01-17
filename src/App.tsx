@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {useAppDispatch,useAppSelector} from './hooks'
+import Todos from './components/Todos';
+/* import {changeCount} from './redux/mainReducer' */
+
 
 function App() {
+const dispatch = useAppDispatch();
+/* const count = useAppSelector((store)=>store.data.count) */
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="content">
+      <Todos/>
+
+  
+  {/*   {count}
+    <button onClick={()=>dispatch(changeCount(count+1))}>+1</button> */}
     </div>
   );
 }
